@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deniz'in Kalpleri</title>
+    <title>Hakan Hayal'in Kalpleri</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
@@ -29,7 +29,7 @@
             z-index: 1; /* Kalplerin önde olması için */
         }
 
-        #denizTextContainer {
+        #hakanHayalTextContainer {
             position: absolute;
             z-index: 2; /* Yazının kalplerin üzerinde olması için */
             color: white; /* Başlangıçta beyaz, sonra animasyonla değişecek */
@@ -42,7 +42,7 @@
             pointer-events: none; /* Yazının fare etkileşimini engellememesi için */
         }
 
-        #denizTextContainer.visible {
+        #hakanHayalTextContainer.visible {
             opacity: 1;
             transform: scale(1);
         }
@@ -62,7 +62,7 @@
 <body>
     <div id="loading-indicator">Yükleniyor...</div>
     <canvas id="heartCanvas"></canvas>
-    <div id="denizTextContainer">Deniz</div>
+    <div id="hakanHayalTextContainer">Hakan Hayal</div>
 
     <script>
         // Global variables for Firebase configuration, if needed (not used in this specific app)
@@ -72,7 +72,7 @@
 
         const canvas = document.getElementById('heartCanvas');
         const ctx = canvas.getContext('2d');
-        const denizTextContainer = document.getElementById('denizTextContainer');
+        const hakanHayalTextContainer = document.getElementById('hakanHayalTextContainer');
         const loadingIndicator = document.getElementById('loading-indicator');
 
         let particles = [];
@@ -275,9 +275,9 @@
                 particles[i].targetY = heartPoints[targetIndex].y;
             }
 
-            // Show "Deniz" text after a delay
+            // Show "Hakan Hayal" text after a delay
             setTimeout(() => {
-                denizTextContainer.classList.add('visible');
+                hakanHayalTextContainer.classList.add('visible');
             }, 3000); // 3 saniye sonra yazı görünsün
         }
 
@@ -297,7 +297,6 @@
                 cancelAnimationFrame(animationFrameId);
             }
         });
-
     </script>
 </body>
 </html>
